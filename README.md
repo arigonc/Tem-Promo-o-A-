@@ -7,11 +7,8 @@ Código: O ambiente de desenvolvimento foi o Visual Studio Code. Além disso, fo
 Configurações: O projeto foi configurado para rodar com a ajuda do pacote xampp, que disponibiliza, dentre vários recursos, o servidor Apache. Dessa forma, alguns arquivos foram inseridos apenas para garantir um ambiente de desenvolvimento adequado.
 
 Banco de dados: Foi utilizado o MySQL como Sistema de Gerenciamento de Banco de Dados. A seguir, tem-se o código criado.
-<code>
-CREATE DATABASE tempromocaoai;
-
+<code>CREATE DATABASE tempromocaoai;
 USE tempromocaoai;
-
 CREATE TABLE `empresas` (
   `cnpj` varchar(255) NOT NULL PRIMARY KEY,
   `email` varchar(255) NOT NULL,
@@ -22,7 +19,6 @@ CREATE TABLE `empresas` (
   `telefone` varchar(255) NOT NULL,
   `cadastro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-
 CREATE TABLE `promocoes` (
   `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cnpj` varchar(255) NOT NULL,
@@ -37,7 +33,6 @@ CREATE TABLE `promocoes` (
   `preco_fim` varchar(255) NOT NULL,
   `cadastro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-
 CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL PRIMARY KEY,
   `senha` varchar(255) NOT NULL,
@@ -45,7 +40,6 @@ CREATE TABLE `usuarios` (
   `cadastro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `atividade` tinyint(1) NOT NULL
 );
-
 CREATE TABLE `seguidores` (
   `email` varchar(255) NOT NULL,
   `cnpj` varchar(255) NOT NULL,
@@ -53,7 +47,6 @@ CREATE TABLE `seguidores` (
   FOREIGN KEY (email) REFERENCES usuarios(email),  
   FOREIGN KEY (cnpj) REFERENCES empresas(cnpj)
 );
-
 CREATE TABLE `curtidas` (
   `email` varchar(255) NOT NULL,
   `id` int NOT NULL,
@@ -61,12 +54,10 @@ CREATE TABLE `curtidas` (
   FOREIGN KEY (email) REFERENCES usuarios(email),  
   FOREIGN KEY (id) REFERENCES promocoes(id)
 );
-
 CREATE TABLE `denuncias` (
   `email` varchar(255) NOT NULL,
   `id` int NOT NULL,
   `cadastro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (email) REFERENCES usuarios(email),  
   FOREIGN KEY (id) REFERENCES promocoes(id)
-);
-</code>
+);</code>
