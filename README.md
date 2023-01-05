@@ -7,6 +7,7 @@ Código: O ambiente de desenvolvimento foi o Visual Studio Code. Além disso, fo
 Configurações: O projeto foi configurado para rodar com a ajuda do pacote xampp, que disponibiliza, dentre vários recursos, o servidor Apache. Dessa forma, alguns arquivos foram inseridos apenas para garantir um ambiente de desenvolvimento adequado.
 
 Banco de dados: Foi utilizado o MySQL como Sistema de Gerenciamento de Banco de Dados. A seguir, tem-se o código criado.
+
 <code>CREATE DATABASE tempromocaoai;
 USE tempromocaoai;
 CREATE TABLE `empresas` (
